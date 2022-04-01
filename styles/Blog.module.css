@@ -1,0 +1,23 @@
+.div1 {
+    background-color: greenyellow;
+}
+
+.main {
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 3rem;
+  }
+
+  .blogs1 {
+      background-color: rgb(110, 26, 78);
+      max-width: 45vw;
+  }
+
+  .blogtitle {
+      cursor: pointer;
+  }
