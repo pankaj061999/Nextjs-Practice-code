@@ -1,13 +1,11 @@
-.imgname {
-    border-radius: 8px;
-    margin: 10px;
-  }
+
 
   .container {
-    padding: 0 2rem;
+    margin: 45px auto;
+    max-width: 45vw;
   }
   
-  .main {
+  /* .main {
     min-height: 100vh;
     padding: 4rem 0;
     flex: 1;
@@ -17,5 +15,9 @@
     align-items: center;
     padding-top: 3rem;
     /* background-image: url("../public/TajMahal.jpg"); */
-    background-color: plum;
+    /* background-color: plum; */
+  /* }  */
+
+  .heading {
+    text-align: center;
   }

@@ -5,6 +5,10 @@ import * as fs from 'fs'
 
 
 const Slug = (props) => {
+
+  function createMarkup(c) {
+    return {__html: c};
+  }
   const [blog, setBlog] = useState(props.myBlog);
 
   console.log("###################", blog);
@@ -13,7 +17,7 @@ const Slug = (props) => {
       <main>
         <h1>{blog && blog.title}</h1>
         <br />
-        <div>{blog && blog.Content}</div>
+        {blog && <div  dangerouslySetInnerHTML={createMarkup(blog.Content)}></div>}
       </main>
     </div>
   );
@@ -21,12 +25,14 @@ const Slug = (props) => {
 
 
 export async function getStaticPaths() {
+
+  let allb= await fs.promises.readdir(`blogdata`)
+      allb = allb.map((item) => {
+        return { params: {slug: item.split(".")[0]}}
+      })
+      console.log(allb)
   return {
-    paths: [
-      { params: { slug: "how-to-learn-javascript"} },
-      { params: { slug: "how-to-learn-next"} },
-      { params: { slug: "how-to-learn-react"} },
-    ],
+    paths: allb,
     fallback: true // false or "blocking"
   };
 }
